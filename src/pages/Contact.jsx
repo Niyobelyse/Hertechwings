@@ -1,6 +1,11 @@
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+
 export default function ContactPage() {
     return (
-      <div className="flex flex-col md:flex-row min-h-screen">
+<>
+<Header />
+<div className="flex flex-col md:flex-row min-h-screen">
         <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
           <div className="max-w-md mx-auto w-full">
             <div className="mb-8">
@@ -85,6 +90,8 @@ export default function ContactPage() {
 
         </div>
       </div>
+<Footer />
+</>
     );
   }
   

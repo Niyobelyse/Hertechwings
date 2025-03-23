@@ -14,19 +14,23 @@ import ContactPage from "./pages/Contact";
 // import TeamProfiles from "./components/Team";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import LearnerDashboard from "./pages/LearnerDashboard";
+import MentorDashboard from "./pages/MentorDashboard";
 export default function App() {
   return (
     <>
       <Router>
-        <Header />
+     
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/learnerdashboard" element={<LearnerDashboard />} />
+          <Route path="/mentordashboard" element={<MentorDashboard />} />
         </Routes>
-        <Footer />
+
       </Router>
     </>
   );

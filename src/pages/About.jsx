@@ -6,8 +6,10 @@ import TeamProfiles from "../components/Team";
 export default function About(){
     return(
         <>
+        <Header />
         <HertechwingsStory />
         <TeamProfiles />
+        <Footer />
         
         </>
         
