@@ -123,7 +123,7 @@ export default function LoginPage() {
           <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-white opacity-20 rounded-full"></div>
 
           <div className="relative z-10 text-center">
-            <h2 className="text-white text-4xl font-bold mb-8 max-w-md">Turn your ideas into reality</h2>
+            <h2 className="text-white text-4xl font-bold mb-8 max-w-md"> Welcome Back to HerTechWings!</h2>
           </div>
         </div>
       </div>

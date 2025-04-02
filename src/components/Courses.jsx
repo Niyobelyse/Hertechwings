@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const CourseCard = ({ image, logo, organization, title, description }) => {
+const CourseCard = ({ image, title, description }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="relative h-40 overflow-hidden">
@@ -11,18 +11,7 @@ const CourseCard = ({ image, logo, organization, title, description }) => {
         />
       </div>
       <div className="p-4">
-        <div className="flex items-center mb-3">
-          {logo && (
-            <div className="w-8 h-8 mr-2 flex-shrink-0">
-              <img 
-                src={logo} 
-                alt={organization} 
-                className="w-full h-full object-contain"
-              />
-            </div>
-          )}
-          <span className="text-gray-600 text-sm">{organization}</span>
-        </div>
+
         <h3 className="font-bold text-lg mb-2 text-gray-900">{title}</h3>
         {description && <p className="text-gray-600 mb-3 text-sm">{description}</p>}
       </div>
@@ -38,7 +27,7 @@ const CourseSection = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8080/homepage-courses/'); 
+        const response = await fetch('http://127.0.0.1:8000/courses/'); 
         if (!response.ok) throw new Error("Failed to fetch courses");
         const data = await response.json();
         setCourses(data);
@@ -65,8 +54,8 @@ const CourseSection = () => {
         {courses.map(course => (
           <CourseCard 
             key={course.id} 
-            image={course.image ? `http://127.0.0.1:8080${course.image}` : "python.webp"}
-            logo={course.logo || ""}
+            image={course.image}
+          
             title={course.title}
             description={course.description}
           />

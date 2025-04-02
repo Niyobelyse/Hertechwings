@@ -99,18 +99,63 @@ export default function AssignmentManagement() {
       <div style={{ marginBottom: "20px", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }}>
         <h2>{editing ? "Edit Assignment" : "Add Assignment"}</h2>
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <input name="title" placeholder="Title" value={form.title} onChange={handleChange} required />
-          <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} required />
-          <input type="datetime-local" name="available_date" value={form.available_date} onChange={handleChange} required />
-          <input type="datetime-local" name="due_date" value={form.due_date} onChange={handleChange} required />
-          <input type="number" name="points" placeholder="Points" value={form.points} onChange={handleChange} required />
-          <select name="course" value={form.course} onChange={handleChange} required>
+          <input
+            name="title"
+            placeholder="Title"
+            value={form.title}
+            onChange={handleChange}
+            required
+            className="focus:ring-2 focus:ring-pink-500 focus:outline-none p-2 border border-gray-300 rounded"
+          />
+          <textarea
+            name="description"
+            placeholder="Description"
+            value={form.description}
+            onChange={handleChange}
+            required
+            className="focus:ring-2 focus:ring-pink-500 focus:outline-none p-2 border border-gray-300 rounded"
+          />
+          <input
+            type="datetime-local"
+            name="available_date"
+            value={form.available_date}
+            onChange={handleChange}
+            required
+            className="focus:ring-2 focus:ring-pink-500 focus:outline-none p-2 border border-gray-300 rounded"
+          />
+          <input
+            type="datetime-local"
+            name="due_date"
+            value={form.due_date}
+            onChange={handleChange}
+            required
+            className="focus:ring-2 focus:ring-pink-500 focus:outline-none p-2 border border-gray-300 rounded"
+          />
+          <input
+            type="number"
+            name="points"
+            placeholder="Points"
+            value={form.points}
+            onChange={handleChange}
+            required
+            className="focus:ring-2 focus:ring-pink-500 focus:outline-none p-2 border border-gray-300 rounded"
+          />
+          <select
+            name="course"
+            value={form.course}
+            onChange={handleChange}
+            required
+            className="focus:ring-2 focus:ring-pink-500 focus:outline-none p-2 border border-gray-300 rounded"
+          >
             <option value="">Select Course</option>
             {courses.map((course) => (
               <option key={course.id} value={course.id}>{course.title}</option>
             ))}
           </select>
-          <button type="submit" className="bg-pink-500" style={{ color: "white", padding: "10px", borderRadius: "5px", fontWeight: "bold" }}>
+          <button
+            type="submit"
+            className="bg-pink-500 text-white p-2 rounded font-bold focus:ring-2 focus:ring-pink-500 focus:outline-none"
+          >
             {editing ? "Update Assignment" : "Submit"}
           </button>
         </form>
@@ -142,8 +187,18 @@ export default function AssignmentManagement() {
                   {courses.find((course) => course.id === assignment.course)?.title || "N/A"}
                 </td>
                 <td style={{ border: "1px solid #ddd", padding: "8px", display: "flex", gap: "5px" }}>
-                  <button onClick={() => handleEdit(assignment)} className="bg-pink-500" style={{ color: "white", padding: "5px", borderRadius: "5px" }}>Edit</button>
-                  <button onClick={() => handleDelete(assignment.id)} style={{ backgroundColor: "red", color: "white", padding: "5px", borderRadius: "5px" }}>Delete</button>
+                  <button
+                    onClick={() => handleEdit(assignment)}
+                    className="bg-pink-500 text-white p-2 rounded focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(assignment.id)}
+                    className="bg-red-500 text-white p-2 rounded focus:ring-2 focus:ring-red-500 focus:outline-none"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

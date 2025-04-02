@@ -49,7 +49,7 @@ export default function SignUpPage() {
   return (
     <>
       <Header />
-      <div className="flex flex-col md:flex-row min-h-screen">
+      <div className="flex flex-col md:flex-row py-12 min-h-screen">
         <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
           <div className="max-w-md mx-auto w-full">
             <h1 className="text-4xl font-bold mb-4 text-gray-900">Sign Up</h1>
@@ -167,14 +167,14 @@ export default function SignUpPage() {
         </div>
 
         {/* Right Side Design */}
-        <div className="hidden md:flex w-1/2 bg-gradient-to-b from-pink-400 to-orange-300 p-12 items-center justify-center relative overflow-hidden">
+        <div className="hidden  rounded-lg md:flex w-1/2 bg-gradient-to-b from-pink-400 to-orange-300 p-12 items-center justify-center relative overflow-hidden">
           {/* Decorative Shapes */}
           <div className="absolute top-20 right-20 w-12 h-12 border-2 border-white opacity-20 rotate-45"></div>
           <div className="absolute bottom-40 left-20 w-8 h-8 border-2 border-white opacity-20 rotate-12"></div>
           <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-white opacity-20 rounded-full"></div>
 
           <div className="relative z-10 text-center">
-            <h2 className="text-white text-4xl font-bold mb-8 max-w-md">Turn your ideas into reality</h2>
+            <h2 className="text-white text-4xl font-bold mb-8 max-w-md">Join HerTechWings</h2>
           </div>
         </div>
       </div>

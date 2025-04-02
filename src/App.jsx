@@ -19,7 +19,7 @@ import LearnerDashboard from "./pages/LearnerDashboard";
 import MentorDashboard from "./pages/MentorDashboard";
 import CourseListSection from "./components/CourseList";
 import AssignmentTracker from "./components/Assignment";
-import MyCourses from "./components/Certificate";
+
 import MessageApp from "./components/Message";
 import AssignmentManagement from "./components/MAssignmentManagement";
 import CourseManagement from "./components/CourseManagement";
@@ -45,6 +45,7 @@ export default function App() {
           <Route path="/verifyotp" element={<VerifyOTP />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
+          
 
 
           {/* Learner dashboard and nested courses route */}
