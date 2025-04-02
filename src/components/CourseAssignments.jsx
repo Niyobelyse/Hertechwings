@@ -13,8 +13,8 @@ const CourseAssignments = () => {
   useEffect(() => {
     const fetchAssignments = async () => {
       try {
-        const upcomingResponse = await fetch(`http://127.0.0.1:8000/courses/${courseId}/assignments/?type=upcoming`);
-        const pastResponse = await fetch(`http://127.0.0.1:8000/courses/${courseId}/assignments/?type=past`);
+        const upcomingResponse = await fetch(`https://belyse.pythonanywhere.com//courses/${courseId}/assignments/?type=upcoming`);
+        const pastResponse = await fetch(`https://belyse.pythonanywhere.com//courses/${courseId}/assignments/?type=past`);
 
         if (!upcomingResponse.ok || !pastResponse.ok) {
           throw new Error("Failed to fetch assignments");

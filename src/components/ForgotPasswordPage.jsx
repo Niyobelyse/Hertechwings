@@ -14,7 +14,7 @@ export default function ForgotPasswordPage() {
     setMessage("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/request-password-reset/", { email });
+      const response = await axios.post("https://belyse.pythonanywhere.com//request-password-reset/", { email });
       setMessage(response.data.message);
 
       // Redirect to reset password page after OTP is sent

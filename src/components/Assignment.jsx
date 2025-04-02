@@ -15,8 +15,8 @@ const AssignmentTracker = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const assignmentsResponse = await fetch("http://127.0.0.1:8000/assignments/");
-        const coursesResponse = await fetch("http://127.0.0.1:8000/courses/");
+        const assignmentsResponse = await fetch("https://belyse.pythonanywhere.com//assignments/");
+        const coursesResponse = await fetch("https://belyse.pythonanywhere.com//courses/");
 
         if (!assignmentsResponse.ok || !coursesResponse.ok) {
           throw new Error("Failed to fetch data");

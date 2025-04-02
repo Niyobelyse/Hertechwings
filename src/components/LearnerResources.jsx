@@ -11,7 +11,7 @@ export default function LearnerResources() {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/course-resources/");
+      const response = await axios.get("https://belyse.pythonanywhere.com//course-resources/");
       setResources(response.data);
     } catch (err) {
       setError("Failed to fetch resources");

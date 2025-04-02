@@ -22,7 +22,7 @@ export default function LoginPage() {
     setMessage("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/login/", formData, {
+      const response = await axios.post("https://belyse.pythonanywhere.com//login/", formData, {
         headers: { "Content-Type": "application/json" },
       });
 

@@ -23,7 +23,7 @@ export default function ResetPasswordPage() {
     setMessage("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/reset-password/", formData);
+      const response = await axios.post("https://belyse.pythonanywhere.com//reset-password/", formData);
       setMessage(response.data.message);
       navigate("/login"); // Redirect to login after success
     } catch (error) {

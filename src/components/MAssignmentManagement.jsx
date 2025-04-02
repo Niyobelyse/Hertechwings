@@ -20,13 +20,13 @@ export default function AssignmentManagement() {
   }, []);
 
   const fetchAssignments = async () => {
-    const response = await fetch("http://127.0.0.1:8000/assignments/");
+    const response = await fetch("https://belyse.pythonanywhere.com//assignments/");
     const data = await response.json();
     setAssignments(data);
   };
 
   const fetchCourses = async () => {
-    const response = await fetch("http://127.0.0.1:8000/courses/");
+    const response = await fetch("https://belyse.pythonanywhere.com//courses/");
     const data = await response.json();
     setCourses(data);
   };
@@ -48,13 +48,13 @@ export default function AssignmentManagement() {
     };
 
     if (editing) {
-      await fetch(`http://127.0.0.1:8000/assignments/${form.id}/`, {
+      await fetch(`https://belyse.pythonanywhere.com//assignments/${form.id}/`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestData),
       });
     } else {
-      await fetch("http://127.0.0.1:8000/assignments/", {
+      await fetch("https://belyse.pythonanywhere.com//assignments/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestData),
@@ -88,7 +88,7 @@ export default function AssignmentManagement() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://127.0.0.1:8000/assignments/${id}/`, {
+    await fetch(`https://belyse.pythonanywhere.com//assignments/${id}/`, {
       method: "DELETE",
     });
     fetchAssignments();

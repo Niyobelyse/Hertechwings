@@ -16,7 +16,7 @@ export default function VerifyOTP() {
     setMessage("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/verifyotp/", formData, {
+      const response = await axios.post("https://belyse.pythonanywhere.com//verifyotp/", formData, {
         headers: { "Content-Type": "application/json" },
       });
 

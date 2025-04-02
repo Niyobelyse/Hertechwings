@@ -21,7 +21,7 @@ export default function CourseResources() {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/course-resources/");
+      const response = await axios.get("https://belyse.pythonanywhere.com//course-resources/");
       setResources(response.data);
     } catch (err) {
       setError("Failed to fetch resources");
@@ -30,7 +30,7 @@ export default function CourseResources() {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/courses/");
+      const response = await axios.get("https://belyse.pythonanywhere.com//courses/");
       setCourses(response.data);
     } catch (err) {
       setError("Failed to fetch courses");
@@ -39,7 +39,7 @@ export default function CourseResources() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/course-resources/${id}/`);
+      await axios.delete(`https://belyse.pythonanywhere.com//course-resources/${id}/`);
       setResources(resources.filter((resource) => resource.id !== id));
     } catch (err) {
       setError("Failed to delete resource");
@@ -61,7 +61,7 @@ export default function CourseResources() {
     try {
       if (editingResource) {
         const response = await axios.put(
-          `http://127.0.0.1:8000/course-resources/${editingResource.id}/`,
+          `https://belyse.pythonanywhere.com//course-resources/${editingResource.id}/`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -69,7 +69,7 @@ export default function CourseResources() {
           resources.map((res) => (res.id === editingResource.id ? response.data : res))
         );
       } else {
-        const response = await axios.post("http://127.0.0.1:8000/course-resources/", formData, {
+        const response = await axios.post("https://belyse.pythonanywhere.com//course-resources/", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         setResources([...resources, response.data]);

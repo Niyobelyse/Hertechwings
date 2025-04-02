@@ -10,7 +10,7 @@ export default function CourseManagement() {
   }, []);
 
   const fetchCourses = async () => {
-    const response = await fetch("http://127.0.0.1:8000/courses/");
+    const response = await fetch("https://belyse.pythonanywhere.com//courses/");
     const data = await response.json();
     setCourses(data);
   };
@@ -31,12 +31,12 @@ export default function CourseManagement() {
     if (form.image) formData.append("image", form.image);
 
     if (editing) {
-      await fetch(`http://127.0.0.1:8000/courses/${form.id}/`, {
+      await fetch(`https://belyse.pythonanywhere.com//courses/${form.id}/`, {
         method: "PUT",
         body: formData,
       });
     } else {
-      await fetch("http://127.0.0.1:8000/courses/", {
+      await fetch("https://belyse.pythonanywhere.com//courses/", {
         method: "POST",
         body: formData,
       });
@@ -53,7 +53,7 @@ export default function CourseManagement() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://127.0.0.1:8000/courses/${id}/`, {
+    await fetch(`https://belyse.pythonanywhere.com//courses/${id}/`, {
       method: "DELETE",
     });
     fetchCourses();

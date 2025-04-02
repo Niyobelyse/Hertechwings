@@ -26,7 +26,7 @@ export default function SignUpPage() {
     setMessage("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/register/", formData, {
+      const response = await axios.post("https://belyse.pythonanywhere.com//register/", formData, {
         headers: { "Content-Type": "application/json" },
       });
 
