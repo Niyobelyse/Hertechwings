@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Book, ClipboardList, GraduationCap, Home, Mail, CheckCircle, Menu } from "lucide-react";
-import { Link, Outlet } from "react-router-dom"; 
 import CourseListSection from "../components/CourseList";
 import AssignmentTracker from "../components/Assignment";
 import MyCourses from "../components/Certificate";
@@ -8,6 +8,13 @@ import MessageApp from "../components/Message";
 
 
 const Sidebar = ({ links, title, isOpen, toggleMenu }) => {
+  const navigate = useNavigate(); // Hook for programmatic navigation
+
+  const handleLogout = () => {
+    // Perform logout actions here (e.g., clearing auth tokens, calling API)
+    navigate("/"); // Redirect to home page
+  };
+
   return (
     <div
       className={`fixed top-0 left-0 h-full w-64 bg-black text-white p-6 flex flex-col justify-between transition-transform ${
@@ -37,7 +44,7 @@ const Sidebar = ({ links, title, isOpen, toggleMenu }) => {
         </ul>
       </div>
       <div>
-        <button className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-md">Logout</button>
+        <button onClick={handleLogout} className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-md">Logout</button>
       </div>
     </div>
   );

@@ -1,32 +1,13 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
-import { useNavigate } from "react-router-dom";  // For redirection after logout
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Book, ClipboardList, Home, FileText, Menu, X } from "lucide-react";
 
 function Sidebar({ links, isOpen, toggleSidebar }) {
-  const navigate = useNavigate();  // Hook for redirection
+  const navigate = useNavigate(); // Hook for programmatic navigation
 
-  const handleLogout = async () => {
-    try {
-      // Make a POST request to your backend to log out (e.g., invalidate the JWT token)
-      const response = await fetch("http://127.0.0.1:8000/logout/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("access_token")}`, // Assuming token is stored in localStorage
-        },
-      });
-
-      if (response.ok) {
-        // Successfully logged out
-        localStorage.removeItem("access_token");  // Remove JWT from localStorage
-        navigate("/login");  // Redirect to login page
-      } else {
-        console.error("Logout failed:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error during logout:", error);
-    }
+  const handleLogout = () => {
+    // Perform logout actions here (e.g., clearing auth tokens, calling API)
+    navigate("/"); // Redirect to home page
   };
 
   return (
@@ -41,16 +22,16 @@ function Sidebar({ links, isOpen, toggleSidebar }) {
       <ul className="space-y-4 flex-grow mt-6">
         {links.map((link, index) => (
           <li key={index}>
-            <a href={link.href} className="flex items-center text-white hover:bg-pink-600 p-3 rounded-md">
+            <Link to={link.href} className="flex items-center text-white hover:bg-pink-600 p-3 rounded-md">
               {link.icon}
               <span className="ml-3">{link.text}</span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
       {/* Logout Button */}
-      <button 
-        onClick={handleLogout} 
+      <button
+        onClick={handleLogout}
         className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-md mt-auto"
       >
         Logout
