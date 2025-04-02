@@ -1,12 +1,65 @@
-# React + Vite
+# HerTechWings Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **Project Overview**
 
-Currently, two official plugins are available:
+This repository contains the frontend of **HerTechWings**, a web application designed to empower young women from disadvantaged communities in Rwanda through technology. The frontend is built using React.js and provides an interactive user experience for accessing digital literacy resources, Assignments, and Courses
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Technologies Used**
 
-## Expanding the ESLint configuration
+- **Framework:** React.js
+- **Styling:** Tailwind CSS
+- **API Communication:** Axios
+- **Routing:** React Router
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## **Installation & Setup**
+
+### **1. Clone the Repository**
+
+```sh
+git clone https://github.com/Niyobelyse/Hertechwings.git
+cd Hertechwings
+```
+
+### **2. Install Dependencies**
+
+```sh
+npm install
+```
+
+### **4. Run the Development Server**
+
+```sh
+npm  run dev
+```
+
+The application will be available at:
+
+```sh
+http://localhost:5173
+```
+
+## **Project Structure**
+
+```
+/hertechwings
+│── /src
+│   │── /assets
+│   │── /components   
+│   │── /pages   
+│   
+│ 
+│
+│── .gitignore
+│── package.json
+│── README.md
+```
+
+
+Deployment We used Vercel:
+
+```sh
+vercel
+```
+
+
+
